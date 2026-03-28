@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import '../../features/teacher/welcome/teacher_welcome_screen.dart';
 import '../../features/teacher/create_session/create_session_screen.dart';
 import '../../features/teacher/dashboard/live_dashboard_screen.dart';
+import '../../features/teacher/summary/session_summary_screen.dart';
 
 final appRouter = GoRouter(
   initialLocation: '/',
@@ -21,7 +22,7 @@ final appRouter = GoRouter(
     ),
     GoRoute(
       path: '/session/:id/summary',
-      builder: (context, state) => const Scaffold(body: Center(child: Text('Summary (Phase 7)'))),
+      builder: (context, state) => SessionSummaryScreen(sessionId: state.pathParameters['id']!),
     ),
   ],
 );
