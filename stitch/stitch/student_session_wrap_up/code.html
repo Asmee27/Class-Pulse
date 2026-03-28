@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ClassPulse - Session Feedback</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-bright": "#f7f9ff",
+                        "tertiary-fixed-dim": "#b6cad2",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#eef1f8",
+                        "surface-container-low": "#f1f4fb",
+                        "on-secondary-container": "#606474",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-surface-variant": "#45464e",
+                        "on-secondary-fixed-variant": "#424655",
+                        "surface-variant": "#dfe2e9",
+                        "on-tertiary": "#ffffff",
+                        "inverse-surface": "#2d3136",
+                        "on-background": "#181c21",
+                        "surface": "#f7f9ff",
+                        "on-surface": "#181c21",
+                        "on-tertiary-fixed-variant": "#374951",
+                        "on-primary-fixed": "#0d1a3b",
+                        "error-container": "#ffdad6",
+                        "primary": "#253153",
+                        "on-tertiary-fixed": "#0b1e24",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#d7dae1",
+                        "surface-container-highest": "#dfe2e9",
+                        "surface-container-high": "#e5e8ef",
+                        "secondary-fixed-dim": "#c2c6d8",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#c6c6cf",
+                        "on-primary-container": "#abb7e0",
+                        "on-secondary-fixed": "#171b28",
+                        "secondary": "#5a5e6e",
+                        "secondary-container": "#dee2f5",
+                        "inverse-primary": "#b9c5ef",
+                        "tertiary-fixed": "#d2e6ef",
+                        "background": "#f7f9ff",
+                        "surface-tint": "#515d82",
+                        "secondary-fixed": "#dee2f5",
+                        "on-primary-fixed-variant": "#3a4669",
+                        "primary-fixed-dim": "#b9c5ef",
+                        "tertiary": "#23353c",
+                        "tertiary-container": "#3a4c53",
+                        "outline": "#76767f",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#ebeef5",
+                        "primary-container": "#3c486b",
+                        "primary-fixed": "#dae1ff",
+                        "on-tertiary-container": "#a8bcc4"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #253153 0%, #3c486b 100%);
+        }
+        .soft-glow-input:focus {
+            box-shadow: 0 4px 20px -5px rgba(37, 49, 83, 0.2);
+            outline: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen selection:bg-primary-fixed selection:text-primary">
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-[#f7f9ff] dark:bg-slate-900">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#253153] dark:text-slate-100" style="font-variation-settings: 'FILL' 1;">sensors</span>
+<span class="text-[#253153] dark:text-slate-100 font-bold text-xl tracking-tight">ClassPulse Session</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-sm font-medium text-secondary">Advanced Astrophysics 101</span>
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border-2 border-surface-container-lowest">
+<img class="w-full h-full object-cover" data-alt="close-up portrait of a smiling student in a modern educational setting with soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB73mMsQeoaqy2ZcDsAB7h7-w5jCF0ckjfNPlTBcFYD2KD9_jR3FAYt90ViO7IwyMx8zgdQilfoGmjRNnHsxQ76AtOZpeycGF4EPaxaidjR7RpBzq7q9ADHRomdsNGOCN8q20Aae1VXYbl7vO6wKd458WdCp_RHkkGp0Sl6KPX_k7Tfo0YQ-9tRF7T2rHhPRt4ao0KycrlzXhqeu0igrheCyLs5RwpSRybGt2Z_LDUwEjIxmMTkj60hLoTMwfWVF4L5uGEZARiB8KA"/>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-16 px-6 max-w-4xl mx-auto">
+<div class="relative">
+<div class="absolute -top-12 -left-8 w-64 h-64 bg-tertiary-fixed/30 rounded-full blur-3xl -z-10"></div>
+<div class="absolute -bottom-12 -right-8 w-48 h-48 bg-secondary-fixed/30 rounded-full blur-3xl -z-10"></div>
+<div class="text-center mb-12">
+<span class="inline-block px-4 py-1.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant text-sm font-semibold tracking-wide mb-4">SESSION COMPLETE</span>
+<h1 class="text-4xl md:text-5xl font-extrabold text-primary tracking-tight mb-4">Thank you for participating!</h1>
+<p class="text-on-surface-variant text-lg max-w-xl mx-auto">Your feedback helps us transform every classroom experience into an inspired journey of discovery.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+<div class="md:col-span-4 space-y-6">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/10">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary">analytics</span>
+<span class="text-xs font-bold uppercase tracking-widest text-secondary">Summary</span>
+</div>
+<h3 class="font-bold text-primary mb-1">Stellar Dynamics</h3>
+<p class="text-sm text-on-surface-variant mb-4">Instructor: Dr. Aris Thorne</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-[10px] font-bold uppercase tracking-wider text-on-secondary-container">60 Minutes</span>
+<span class="px-3 py-1 bg-tertiary-fixed rounded-full text-[10px] font-bold uppercase tracking-wider text-on-tertiary-fixed-variant">Interactive</span>
+</div>
+</div>
+<div class="relative overflow-hidden group rounded-xl aspect-square">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="group of diverse students collaborating in a bright modern workspace with warm sunbeams" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmjKYNWTlPzqGDhGsIvJuz3CYGGNJA85yDXXIezSytJpYyvsG14KDddDr3hWHq-3e2R_6IHg11sk-Cfvk4zLfJ6AitkeFt7wIpKy9TLwrHYfGi-NKjOFIfOYimKTbzFsxyZ6nHDUd6JEVmBa8HMdp25bKfMar4AuuwtCH0rhL2eDWppT2Pl3JB_LOA245mz-25iQRRU4-RWCFOrF-RnoMhAEb3RCmHkYVgzhrtGD88p0TUOvfRbEPzUe7Ma1JnP-DM3Nb6YSXpi3Y"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex flex-col justify-end p-6">
+<p class="text-white text-sm italic">"Learning is the only thing the mind never exhausts, never fears, and never regrets."</p>
+</div>
+</div>
+</div>
+<div class="md:col-span-8 bg-surface-container-lowest rounded-xl p-8 shadow-sm border border-outline-variant/10">
+<form action="#" class="space-y-10" method="POST">
+<section>
+<label class="block text-sm font-bold uppercase tracking-widest text-secondary mb-6">How was the session pace?</label>
+<div class="flex justify-between items-center gap-2 max-w-md">
+<button class="group flex flex-col items-center gap-3 focus:outline-none" type="button">
+<div class="w-14 h-14 rounded-full bg-surface-container-low group-hover:bg-error-container flex items-center justify-center transition-all duration-200">
+<span class="material-symbols-outlined text-2xl group-hover:text-on-error-container">sentiment_very_dissatisfied</span>
+</div>
+<span class="text-[10px] font-bold text-secondary uppercase tracking-tighter">Lost</span>
+</button>
+<button class="group flex flex-col items-center gap-3 focus:outline-none" type="button">
+<div class="w-14 h-14 rounded-full bg-surface-container-low group-hover:bg-orange-100 flex items-center justify-center transition-all duration-200">
+<span class="material-symbols-outlined text-2xl group-hover:text-orange-700">sentiment_dissatisfied</span>
+</div>
+<span class="text-[10px] font-bold text-secondary uppercase tracking-tighter">Confused</span>
+</button>
+<button class="group flex flex-col items-center gap-3 focus:outline-none" type="button">
+<div class="w-14 h-14 rounded-full bg-primary-container flex items-center justify-center transition-all duration-200 shadow-md scale-110">
+<span class="material-symbols-outlined text-2xl text-on-primary-container" style="font-variation-settings: 'FILL' 1;">sentiment_satisfied</span>
+</div>
+<span class="text-[10px] font-bold text-primary uppercase tracking-tighter">Good</span>
+</button>
+<button class="group flex flex-col items-center gap-3 focus:outline-none" type="button">
+<div class="w-14 h-14 rounded-full bg-surface-container-low group-hover:bg-tertiary-fixed flex items-center justify-center transition-all duration-200">
+<span class="material-symbols-outlined text-2xl group-hover:text-on-tertiary-fixed-variant">sentiment_very_satisfied</span>
+</div>
+<span class="text-[10px] font-bold text-secondary uppercase tracking-tighter">Great</span>
+</button>
+<button class="group flex flex-col items-center gap-3 focus:outline-none" type="button">
+<div class="w-14 h-14 rounded-full bg-surface-container-low group-hover:bg-blue-100 flex items-center justify-center transition-all duration-200">
+<span class="material-symbols-outlined text-2xl group-hover:text-blue-700">rocket_launch</span>
+</div>
+<span class="text-[10px] font-bold text-secondary uppercase tracking-tighter">Stellar</span>
+</button>
+</div>
+</section>
+<section>
+<label class="block text-sm font-bold uppercase tracking-widest text-secondary mb-4">Overall clarity &amp; Engagement</label>
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-4xl text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-4xl text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-4xl text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-4xl text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-4xl text-surface-container-highest">star</span>
+</div>
+</section>
+<section>
+<label class="block text-sm font-bold uppercase tracking-widest text-secondary mb-4" for="feedback">Additional Feedback</label>
+<div class="relative">
+<textarea class="w-full bg-surface-container-low border-none rounded-xl p-4 text-on-surface-variant placeholder:text-on-surface-variant/50 soft-glow-input transition-all resize-none" id="feedback" placeholder="What parts of the session sparked your curiosity today?" rows="4"></textarea>
+<div class="absolute bottom-3 right-3 opacity-20 group-focus-within:opacity-100 transition-opacity pointer-events-none">
+<span class="material-symbols-outlined text-primary">edit_note</span>
+</div>
+</div>
+</section>
+<div class="pt-4 flex items-center justify-between gap-4">
+<button class="px-8 py-3 rounded-full text-secondary font-semibold hover:bg-surface-container-high transition-colors" type="button">
+                                Cancel
+                            </button>
+<button class="primary-gradient px-12 py-3 rounded-full text-white font-bold shadow-lg shadow-primary/20 flex items-center gap-2 group hover:scale-[1.02] active:scale-95 transition-all" type="submit">
+<span>Submit Feedback</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">send</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</main>
+<footer class="py-8 px-6 text-center">
+<div class="flex justify-center gap-8 mb-4">
+<span class="text-[10px] font-bold uppercase tracking-[0.2em] text-on-secondary-fixed-variant/40">Privacy Policy</span>
+<span class="text-[10px] font-bold uppercase tracking-[0.2em] text-on-secondary-fixed-variant/40">Help Center</span>
+<span class="text-[10px] font-bold uppercase tracking-[0.2em] text-on-secondary-fixed-variant/40">Institution Portal</span>
+</div>
+<p class="text-[11px] text-on-surface-variant/60 font-medium">© 2024 ClassPulse Educational Ecosystem. All student voices empowered.</p>
+</footer>
+</body></html>

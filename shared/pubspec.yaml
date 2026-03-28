@@ -1,0 +1,17 @@
+name: shared
+description: Shared UI, models and providers for ClassPulse
+version: 1.0.0
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_riverpod: ^2.5.1
+  firebase_core: 2.27.1
+  cloud_firestore: 4.15.8
+  firebase_auth: 4.17.8
+  google_fonts: ^6.2.1
+
+flutter:
+  uses-material-design: true

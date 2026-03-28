@@ -1,0 +1,56 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isTeacher() {
+      return request.auth != null;
+    }
+
+    match /sessions/{sessionId} {
+      // Teachers can create/read/update sessions; students can only read
+      allow read: if true;
+      allow create, update: if isTeacher();
+      allow delete: if false;
+
+      // Student signals — each student writes only their own device doc
+      match /signals/{deviceId} {
+        allow read: if isTeacher();
+        allow create, update: if true;  // anonymous write by deviceId
+        allow delete: if false;
+      }
+
+      // Questions — write-only for students, teacher can read & acknowledge
+      match /questions/{questionId} {
+        allow create: if true;                     // anonymous student write
+        allow read, update: if isTeacher();        // teacher reads & sets acknowledged=true
+        allow delete: if false;
+      }
+
+      // Topic segments — written by Cloud Functions and teacher client
+      match /topicSegments/{segmentId} {
+        allow read: if true;
+        allow write: if isTeacher();
+      }
+
+      // Aggregates — Cloud Functions only (no client writes)
+      match /aggregates/{doc} {
+        allow read: if isTeacher();
+        allow write: if false;
+      }
+
+      // Session summary — Cloud Function writes, teacher reads
+      match /summary/{doc} {
+        allow read: if isTeacher();
+        allow write: if false;
+      }
+
+      // Student feedback — anonymous write at session end
+      match /studentFeedback/{deviceId} {
+        allow create: if true;
+        allow read: if isTeacher();
+        allow update, delete: if false;
+      }
+    }
+  }
+}

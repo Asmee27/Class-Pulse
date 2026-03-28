@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-bright": "#f7f9ff",
+              "tertiary-fixed-dim": "#b6cad2",
+              "on-primary": "#ffffff",
+              "inverse-on-surface": "#eef1f8",
+              "surface-container-low": "#f1f4fb",
+              "on-secondary-container": "#606474",
+              "on-error": "#ffffff",
+              "on-error-container": "#93000a",
+              "on-surface-variant": "#45464e",
+              "on-secondary-fixed-variant": "#424655",
+              "surface-variant": "#dfe2e9",
+              "on-tertiary": "#ffffff",
+              "inverse-surface": "#2d3136",
+              "on-background": "#181c21",
+              "surface": "#f7f9ff",
+              "on-surface": "#181c21",
+              "on-tertiary-fixed-variant": "#374951",
+              "on-primary-fixed": "#0d1a3b",
+              "error-container": "#ffdad6",
+              "primary": "#253153",
+              "on-tertiary-fixed": "#0b1e24",
+              "error": "#ba1a1a",
+              "surface-dim": "#d7dae1",
+              "surface-container-highest": "#dfe2e9",
+              "surface-container-high": "#e5e8ef",
+              "secondary-fixed-dim": "#c2c6d8",
+              "on-secondary": "#ffffff",
+              "outline-variant": "#c6c6cf",
+              "on-primary-container": "#abb7e0",
+              "on-secondary-fixed": "#171b28",
+              "secondary": "#5a5e6e",
+              "secondary-container": "#dee2f5",
+              "inverse-primary": "#b9c5ef",
+              "tertiary-fixed": "#d2e6ef",
+              "background": "#f7f9ff",
+              "surface-tint": "#515d82",
+              "secondary-fixed": "#dee2f5",
+              "on-primary-fixed-variant": "#3a4669",
+              "primary-fixed-dim": "#b9c5ef",
+              "tertiary": "#23353c",
+              "tertiary-container": "#3a4c53",
+              "outline": "#76767f",
+              "surface-container-lowest": "#ffffff",
+              "surface-container": "#ebeef5",
+              "primary-container": "#3c486b",
+              "primary-fixed": "#dae1ff",
+              "on-tertiary-container": "#a8bcc4"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "3xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-overlay {
+            background: rgba(247, 249, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        .pulse-input-glow:focus-within {
+            box-shadow: 0 4px 20px -5px rgba(37, 49, 83, 0.15);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- TopAppBar from Shared Components JSON -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-[#f7f9ff] dark:bg-slate-900">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#253153] dark:text-slate-100" data-icon="sensors">sensors</span>
+<h1 class="font-plus-jakarta-sans text-lg font-bold tracking-tight text-[#253153] dark:text-slate-100">ClassPulse Session</h1>
+</div>
+<div class="flex items-center">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden border-2 border-white shadow-sm">
+<img class="w-full h-full object-cover" data-alt="close-up portrait of a young student with a friendly expression in a brightly lit modern classroom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASy3Zqi4CxyRWyfUQ9Jg4riM8_D_x-PCxB_tKytUGVvpcrnxJXW3KZsRyddLTJJi948xttWgUF3eeX6Y3CZXJ7QfYOiDK8ln1Dao1EbiHq7mYhYViuscnNmGGNWfv0joRNCn5pNS9nvJlwc7yCgPSdSnYojG23hig7_OHMOtwdAva4Z6P48h3iNEMEvEC4onc9KYEvPGn-wuJyf2wo0w0JXLLZjVtudPQHZ8jEMwdnYyd5AcvV63Q4NZLAzdCLbz0ArCByekfZu7U"/>
+</div>
+</div>
+</header>
+<!-- Background Content (Simulated Feedback Screen) -->
+<main class="pt-24 px-6 max-w-5xl mx-auto pb-12">
+<div class="flex flex-col gap-12">
+<!-- Header Section -->
+<section class="flex justify-between items-end">
+<div class="space-y-2">
+<span class="label-md uppercase tracking-[0.05em] text-secondary font-semibold">Active Session</span>
+<h2 class="display-sm text-primary font-extrabold tracking-tight">Advanced Cognitive Psychology</h2>
+</div>
+<div class="bg-tertiary-fixed px-4 py-2 rounded-full flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-fixed-variant animate-pulse"></span>
+<span class="label-md text-on-tertiary-fixed-variant font-bold">85% Got It</span>
+</div>
+</section>
+<!-- Bento Grid of Classroom Insights -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="md:col-span-2 bg-surface-container-lowest p-8 rounded-3xl relative overflow-hidden group">
+<div class="relative z-10">
+<h3 class="headline-sm mb-6 font-bold text-on-surface">Recent Student Questions</h3>
+<div class="space-y-4">
+<div class="p-4 bg-surface-container-low rounded-xl">
+<p class="body-md text-on-surface-variant">Could you elaborate on the relationship between sensory memory and attention?</p>
+</div>
+<div class="p-4 bg-surface-container-lowest border border-outline-variant/10 rounded-xl">
+<p class="body-md text-on-surface-variant">What's the difference between working memory and short-term memory in this context?</p>
+</div>
+</div>
+</div>
+<div class="absolute -top-4 -right-4 w-24 h-24 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors"></div>
+</div>
+<div class="bg-primary p-8 rounded-3xl flex flex-col justify-between text-on-primary">
+<span class="material-symbols-outlined text-4xl" data-icon="lightbulb">lightbulb</span>
+<div>
+<h3 class="headline-sm font-bold mb-2">Concept Focus</h3>
+<p class="body-sm opacity-80">Most students are currently stuck on "The Encoding Process".</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Modal Overlay -->
+<div class="fixed inset-0 z-[100] flex items-center justify-center p-6">
+<!-- Glassmorphism Backdrop -->
+<div class="absolute inset-0 glass-overlay"></div>
+<!-- Floating White Card (Ask Question Modal) -->
+<div class="relative w-full max-w-lg bg-surface-container-lowest rounded-3xl p-8 shadow-[0_24px_48px_-12px_rgba(24,28,33,0.08)] border border-outline-variant/15 transform translate-y-0">
+<!-- Modal Header -->
+<div class="flex flex-col gap-1 mb-8">
+<div class="flex items-center gap-2 mb-2">
+<div class="p-2 bg-primary-fixed rounded-xl text-primary">
+<span class="material-symbols-outlined text-xl" data-icon="chat_bubble">chat_bubble</span>
+</div>
+<span class="label-md uppercase tracking-widest text-secondary font-bold">New Signal</span>
+</div>
+<h3 class="headline-md font-bold text-on-surface tracking-tight">Ask your question</h3>
+<p class="body-md text-on-surface-variant">Your voice helps the educator pace the lecture effectively.</p>
+</div>
+<!-- Form Content -->
+<form class="space-y-6">
+<!-- Dropdown Category -->
+<div class="space-y-2">
+<label class="label-sm text-secondary font-bold uppercase tracking-wider px-1">What do you need?</label>
+<div class="relative group">
+<select class="w-full bg-surface-container-low border-none rounded-xl py-4 px-5 text-on-surface font-medium appearance-none focus:ring-2 focus:ring-primary/20 transition-all cursor-pointer">
+<option value="doubt">Doubt</option>
+<option value="repeat">Repeat</option>
+<option value="slow_down">Slow Down</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-secondary" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<!-- Text Input -->
+<div class="space-y-2">
+<div class="flex justify-between px-1">
+<label class="label-sm text-secondary font-bold uppercase tracking-wider">Your Question</label>
+<span class="label-sm text-outline font-medium">0 / 150</span>
+</div>
+<div class="pulse-input-glow rounded-2xl bg-surface-container-low transition-all">
+<textarea class="w-full bg-transparent border-none rounded-2xl p-5 text-on-surface placeholder:text-outline focus:ring-0 resize-none text-lg leading-relaxed" maxlength="150" placeholder="Type your question here..." rows="4"></textarea>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col sm:flex-row gap-3 pt-2">
+<button class="flex-1 bg-gradient-to-br from-[#253153] to-[#3c486b] text-on-primary py-4 px-8 rounded-full font-bold text-base shadow-lg shadow-primary/10 active:scale-95 transition-all order-2 sm:order-1" type="submit">
+                        Send Question
+                    </button>
+<button class="flex-1 bg-transparent text-secondary py-4 px-8 rounded-full font-bold text-base hover:bg-surface-container-high active:scale-95 transition-all order-1 sm:order-2" type="button">
+                        Cancel
+                    </button>
+</div>
+</form>
+<!-- Academic Halo Decorative Element -->
+<div class="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/5 rounded-full blur-2xl -z-10"></div>
+</div>
+</div>
+</body></html>

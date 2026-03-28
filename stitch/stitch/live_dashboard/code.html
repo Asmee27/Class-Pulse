@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ClassPulse | Live Session Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary": "#ffffff",
+              "secondary-fixed": "#dee2f5",
+              "error-container": "#ffdad6",
+              "surface-container-low": "#f1f4fb",
+              "on-secondary": "#ffffff",
+              "tertiary-fixed-dim": "#b6cad2",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-container": "#abb7e0",
+              "on-tertiary-fixed": "#0b1e24",
+              "surface-dim": "#d7dae1",
+              "on-surface": "#181c21",
+              "secondary-container": "#dee2f5",
+              "on-background": "#181c21",
+              "on-primary-fixed": "#0d1a3b",
+              "surface-bright": "#f7f9ff",
+              "inverse-on-surface": "#eef1f8",
+              "surface-container-high": "#e5e8ef",
+              "background": "#f7f9ff",
+              "on-surface-variant": "#45464e",
+              "surface-container": "#ebeef5",
+              "surface-tint": "#515d82",
+              "outline-variant": "#c6c6cf",
+              "on-secondary-container": "#606474",
+              "surface": "#f7f9ff",
+              "secondary-fixed-dim": "#c2c6d8",
+              "surface-variant": "#dfe2e9",
+              "primary": "#253153",
+              "tertiary-fixed": "#d2e6ef",
+              "primary-container": "#3c486b",
+              "on-error-container": "#93000a",
+              "inverse-surface": "#2d3136",
+              "primary-fixed-dim": "#b9c5ef",
+              "on-tertiary-fixed-variant": "#374951",
+              "surface-container-highest": "#dfe2e9",
+              "outline": "#76767f",
+              "on-error": "#ffffff",
+              "tertiary": "#23353c",
+              "tertiary-container": "#3a4c53",
+              "inverse-primary": "#b9c5ef",
+              "on-tertiary": "#ffffff",
+              "on-secondary-fixed": "#171b28",
+              "on-secondary-fixed-variant": "#424655",
+              "error": "#ba1a1a",
+              "on-tertiary-container": "#a8bcc4",
+              "primary-fixed": "#dae1ff",
+              "on-primary-fixed-variant": "#3a4669",
+              "secondary": "#5a5e6e"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #253153 0%, #3c486b 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-fixed">
+<!-- Top Navigation Shell -->
+<nav class="flex justify-between items-center w-full sticky top-0 z-50 bg-[#f7f9ff] pt-4 pb-2 px-6">
+<div class="flex items-center gap-4">
+<span class="text-xl font-extrabold text-[#253153] font-headline tracking-tight">ClassPulse</span>
+<div class="h-6 w-[1px] bg-outline-variant/30 hidden md:block"></div>
+<div class="hidden md:flex items-center gap-2 group cursor-pointer px-3 py-1.5 rounded-xl hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-primary text-sm">edit</span>
+<span class="text-primary font-bold font-headline tracking-tight">Introduction to Algorithms</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="primary-gradient text-white px-5 py-2.5 rounded-full font-semibold text-sm flex items-center gap-2 shadow-lg shadow-primary/10 active:scale-95 duration-150">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>New Topic</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-highest flex items-center justify-center border-2 border-white">
+<img class="w-full h-full object-cover" data-alt="professional portrait of a university professor in a bright modern office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3fRIgp5OswndX6f5ZBwkIHGZJ-QgVfKnq_q8MpoyZxkZ8-29t1QvWjVHM3jk40_TeWOXpi008d8SJBgr6STB9rMcPHvREQCZlwWS4oDXqrEpLHgLUZtSQDF1vqi7LLDz2rAVWMY7pEQlIhwUlqLXYhe09pWsLXrhC7_EJ7Qp2FwMONiUEpRIFFH0hmFqj71gJsjb9SAVH1YJGQjNlP_pXjmjdS7yUN14RU8BCiLKJEh1nP6LyKgwxkaYSQK1fB_fB-IlkKSaa3rs"/>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="max-w-7xl mx-auto px-6 pt-8 pb-32">
+<!-- Live Header Info -->
+<header class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="space-y-1">
+<div class="flex items-center gap-2 mb-2">
+<span class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-error opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-error"></span>
+</span>
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Live Session Dashboard</span>
+</div>
+<h1 class="text-4xl font-extrabold tracking-tight text-primary font-headline">Student Comprehension</h1>
+<p class="text-on-surface-variant max-w-lg">Monitoring real-time feedback for CS101: Data Structures &amp; Algorithms. Section B-12.</p>
+</div>
+<div class="flex gap-3">
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">groups</span>
+<div>
+<div class="text-2xl font-bold text-primary">42</div>
+<div class="text-[10px] uppercase tracking-widest text-secondary font-medium">Active Students</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">timer</span>
+<div>
+<div class="text-2xl font-bold text-primary">24:15</div>
+<div class="text-[10px] uppercase tracking-widest text-secondary font-medium">Session Time</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Insights Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+<!-- Got It Card -->
+<div class="relative group">
+<div class="absolute -top-3 left-6 z-10">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest shadow-sm">Got It</span>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-[2rem] shadow-sm border border-outline-variant/10 overflow-hidden">
+<div class="flex items-center justify-between mb-8">
+<div class="w-16 h-16 rounded-2xl bg-tertiary-fixed/40 flex items-center justify-center text-on-tertiary-fixed-variant">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">sentiment_satisfied</span>
+</div>
+<div class="text-right">
+<div class="text-5xl font-black text-primary tracking-tighter">68%</div>
+<div class="text-xs text-secondary font-medium">28 Students</div>
+</div>
+</div>
+<!-- Proportions Visualization -->
+<div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden mb-2">
+<div class="h-full bg-tertiary-fixed-dim rounded-full" style="width: 68%"></div>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">Most students are comfortable with the current complexity level of Big O notation.</p>
+</div>
+</div>
+<!-- Sort Of Card -->
+<div class="relative group">
+<div class="absolute -top-3 left-6 z-10">
+<span class="bg-[#FFF3E0] text-[#E65100] px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest shadow-sm">Sort Of</span>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-[2rem] shadow-sm border border-outline-variant/10 overflow-hidden">
+<div class="flex items-center justify-between mb-8">
+<div class="w-16 h-16 rounded-2xl bg-[#FFF3E0]/60 flex items-center justify-center text-[#E65100]">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">sentiment_neutral</span>
+</div>
+<div class="text-right">
+<div class="text-5xl font-black text-primary tracking-tighter">22%</div>
+<div class="text-xs text-secondary font-medium">9 Students</div>
+</div>
+</div>
+<div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden mb-2">
+<div class="h-full bg-[#FFE0B2] rounded-full" style="width: 22%"></div>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">Moderate confusion regarding Space Complexity vs. Time Complexity.</p>
+</div>
+</div>
+<!-- Lost Card -->
+<div class="relative group">
+<div class="absolute -top-3 left-6 z-10">
+<span class="bg-error-container text-on-error-container px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest shadow-sm">Lost</span>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-[2rem] shadow-sm border border-outline-variant/10 overflow-hidden">
+<div class="flex items-center justify-between mb-8">
+<div class="w-16 h-16 rounded-2xl bg-error-container/40 flex items-center justify-center text-on-error-container">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">sentiment_dissatisfied</span>
+</div>
+<div class="text-right">
+<div class="text-5xl font-black text-primary tracking-tighter">10%</div>
+<div class="text-xs text-secondary font-medium">5 Students</div>
+</div>
+</div>
+<div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden mb-2">
+<div class="h-full bg-error rounded-full" style="width: 10%"></div>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">Small group struggling with Recursive Function tree visualizations.</p>
+</div>
+</div>
+</div>
+<!-- Topic Segments Timeline -->
+<section class="mt-16">
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-xl font-bold text-primary font-headline">Topic Timeline</h3>
+<div class="flex gap-2">
+<button class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="flex gap-6 overflow-x-auto pb-6 snap-x no-scrollbar">
+<!-- Timeline Card 1 -->
+<div class="min-w-[280px] snap-start bg-surface-container-low rounded-2xl p-6 relative border-l-4 border-primary">
+<div class="text-[10px] font-bold text-secondary uppercase tracking-widest mb-2">09:00 - 09:15</div>
+<h4 class="font-bold text-primary mb-3">Intro to Algorithms</h4>
+<div class="flex items-center gap-2">
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full bg-tertiary-fixed ring-2 ring-surface-container-low flex items-center justify-center text-[10px] font-bold text-on-tertiary-fixed-variant">92%</div>
+</div>
+<span class="text-xs text-on-surface-variant">Avg. Confidence</span>
+</div>
+</div>
+<!-- Timeline Card 2 -->
+<div class="min-w-[280px] snap-start bg-surface-container-low rounded-2xl p-6 relative border-l-4 border-primary">
+<div class="text-[10px] font-bold text-secondary uppercase tracking-widest mb-2">09:15 - 09:30</div>
+<h4 class="font-bold text-primary mb-3">Big O Notation</h4>
+<div class="flex items-center gap-2">
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full bg-tertiary-fixed ring-2 ring-surface-container-low flex items-center justify-center text-[10px] font-bold text-on-tertiary-fixed-variant">74%</div>
+</div>
+<span class="text-xs text-on-surface-variant">Avg. Confidence</span>
+</div>
+</div>
+<!-- Timeline Card 3 - ACTIVE -->
+<div class="min-w-[280px] snap-start bg-white rounded-2xl p-6 relative ring-2 ring-primary shadow-xl">
+<div class="absolute -top-2 right-4 bg-primary text-white text-[8px] font-bold px-2 py-0.5 rounded-full uppercase tracking-tighter">Current</div>
+<div class="text-[10px] font-bold text-primary uppercase tracking-widest mb-2">09:30 - Present</div>
+<h4 class="font-bold text-primary mb-3">Space Complexity</h4>
+<div class="flex items-center gap-2">
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full bg-[#FFE0B2] ring-2 ring-white flex items-center justify-center text-[10px] font-bold text-[#E65100]">58%</div>
+</div>
+<span class="text-xs text-primary font-semibold">Fluctuating</span>
+</div>
+</div>
+<!-- Timeline Card 4 - UPCOMING -->
+<div class="min-w-[280px] snap-start bg-surface-container-low/50 rounded-2xl p-6 opacity-60">
+<div class="text-[10px] font-bold text-secondary uppercase tracking-widest mb-2">Upcoming</div>
+<h4 class="font-bold text-primary mb-3">Recursive Patterns</h4>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-secondary">lock</span>
+<span class="text-xs text-on-surface-variant italic">Next segment</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Navigation Shell (Bottom Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-t-[1.5rem] shadow-[0_-4px_24px_rgba(24,28,33,0.04)]">
+<div class="flex flex-col items-center justify-center bg-[#253153] text-white rounded-full p-3 transition-all scale-90 duration-200">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium uppercase tracking-widest mt-1">Dashboard</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#5a5e6e] p-3 hover:bg-[#e5e8ef] rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium uppercase tracking-widest mt-1">Sessions</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#5a5e6e] p-3 hover:bg-[#e5e8ef] rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium uppercase tracking-widest mt-1">Questions</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#5a5e6e] p-3 hover:bg-[#e5e8ef] rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium uppercase tracking-widest mt-1">Profile</span>
+</div>
+</nav>
+<!-- Side Navigation (Web) -->
+<aside class="hidden md:flex fixed inset-y-0 left-0 z-[60] flex flex-col h-full w-20 hover:w-80 rounded-r-[1.5rem] bg-[#f7f9ff] shadow-2xl shadow-[#181c21]/5 group transition-all duration-300 ease-out overflow-hidden border-r border-outline-variant/10">
+<div class="p-6 flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl primary-gradient flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-white">bolt</span>
+</div>
+<span class="text-primary font-black text-xl opacity-0 group-hover:opacity-100 transition-opacity">ClassPulse</span>
+</div>
+<div class="mt-8 flex-1">
+<div class="bg-[#253153] text-white rounded-xl m-2 px-4 py-3 flex items-center gap-4 cursor-pointer">
+<span class="material-symbols-outlined">sensors</span>
+<span class="font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">Live Session</span>
+</div>
+<div class="text-[#45464e] m-2 px-4 py-3 flex items-center gap-4 cursor-pointer hover:bg-[#e5e8ef] rounded-xl transition-colors">
+<span class="material-symbols-outlined">history</span>
+<span class="font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">Class History</span>
+</div>
+<div class="text-[#45464e] m-2 px-4 py-3 flex items-center gap-4 cursor-pointer hover:bg-[#e5e8ef] rounded-xl transition-colors">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">Analytics</span>
+</div>
+<div class="text-[#45464e] m-2 px-4 py-3 flex items-center gap-4 cursor-pointer hover:bg-[#e5e8ef] rounded-xl transition-colors">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">Resources</span>
+</div>
+</div>
+<div class="p-6 border-t border-outline-variant/10">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="close-up of a smiling academic professional with glasses and a soft blue shirt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEU3HxSx7UdaXrVPxpUqKdJ_ATzg-2WTc_UdcH8hZ6Ivty0SluoTscoTyvKMZL6htkxrBCaCZPpFdVjQrqx0QG8MJsBxMxgpJtGq9J5eF_5k3yBoN7KqeHwVk1cBOfBQRg482Lvhu4jO8x3DcBILj8XE3Ti-26uhkEZDxFJRDacbdEeRAWK-vCNKwzl6ra0h-bpeV4aWNbdnkG1YAd1SdFppoxBNEVgqG2QykKG3YsvZS1G_ANSlqnVe0__5wz8DDwuxTbxQoAYaE"/>
+</div>
+<div class="opacity-0 group-hover:opacity-100 transition-opacity overflow-hidden">
+<div class="font-bold text-primary truncate">Dr. Aris</div>
+<div class="text-xs text-secondary truncate">Lead Educator</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Quick Feedback FAB -->
+<button class="fixed bottom-8 right-8 w-14 h-14 rounded-full primary-gradient text-white shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-transform z-[70]">
+<span class="material-symbols-outlined">campaign</span>
+</button>
+</body></html>

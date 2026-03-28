@@ -1,0 +1,29 @@
+name: classpulse_teacher
+description: Teacher application for ClassPulse
+version: 1.0.0+1
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  shared:
+    path: ../shared
+  flutter_riverpod: ^2.5.1
+  firebase_core: 2.27.1
+  cloud_firestore: 4.15.8
+  cloud_functions: 4.6.0
+  firebase_auth: 4.17.8
+  qr_flutter: ^4.1.0
+  google_fonts: ^6.2.1
+  go_router: ^14.2.7
+  flutter_animate: ^4.5.0
+  percent_indicator: ^4.2.3
+  intl: ^0.19.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
